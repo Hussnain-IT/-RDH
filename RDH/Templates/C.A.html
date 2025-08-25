@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certified Agents - RDH</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'C.A.css' %}">
+</head>
+<body>
+    <h2 class="Agent-main-heading">Offical Agent</h2>
+    <div class="main-cantainer-agent"> 
+        <div class="select-role-agent">
+            {% for agent in agents %}
+            <div class="box box-num{{ forloop.counter }}">
+                <div class="box-cont">
+                    <h2>{{ agent.name }}</h2>
+                    <div class="box-img" style="background-image: url('{{ agent.image.url }}');"></div>
+                    <details>
+                        <summary>View Details</summary>
+                        <p><strong>Contact:</strong> {{ agent.email }}</p>
+                        <p><strong>Phone:</strong> {{ agent.phone }}</p>
+                    </details>
+                </div>
+            </div>
+            {% empty %}
+            <p>No agents found.</p>
+            {% endfor %}
+        </div>
+        
+         <div class="btn-footer">
+            
+            <footer>
+                <a href="{% url 'contact' %}" class="btn btn-success align-center" id="back-btn" style="border-radius: 0;">Drop MG</a>
+                <a href="proUI.html" class="btn btn-success align-center" id="back-btn"><i class="fa-solid "></i> Back </a>
+            </footer>
+        </div>
+    </div>
+    {% comment %} <footer>
+        <a href="{% url 'contact' %}" class="btn btn-success align-center" id="back-btn" style="border-radius: 0;">Drop MG</a>
+        <a href="proUI.html" class="btn btn-success align-center" id="back-btn"><i class="fa-solid "></i> Back </a>
+    </footer> {% endcomment %}
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign UP page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'signUP-page.css' %}">
+    
+</head>
+<body>
+    <div class="form">
+        <form action="{% url 'signup' %}" method="post">
+            {% csrf_token %}
+            {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <h2>Registration Form</h2>
+            
+            <label for="username">username</label>
+            <input type="text" id="username" name="username" placeholder="username" required>
+    
+            <label for="mail">Email</label>
+            <input type="email" id="mail" name="email" placeholder="Email" required>
+            
+            <label for="number">Phone Number</label>
+            <input type="tel" id="number" name="phone" placeholder="Phone Number" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+            
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+            
+            <button type="submit">Submit</button>
+            
+            <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+        </form>
+    </div>
+</body>
+</html>

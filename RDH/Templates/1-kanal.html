@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Kanal House</title>
+    <link rel="stylesheet" href="{% static '1-kanal.css' %}">
+</head>
+<body>
+    <div class="main-cantainer-1-kanal">   
+        <h2 class="property-main-heading">Available Properties 1 Kanal</h2>
+        <div class="property-Section">
+            {% for property in properties %}
+            <div class="box{{ forloop.counter }} box">
+                <div class="box-cont">
+                    <h2>{{ property.title }}</h2>
+                    {% if property.image and property.image.url %}
+                        <div class="box-img" style="background-image: url('{{ property.image.url }}');"></div>
+                    {% else %}
+                        <div class="box-img" style="background-color: #eee;"></div>
+                    {% endif %}
+                    <p>
+                        {{ property.beds }} Beds | {{ property.baths }} Baths |
+                        {% if property.area %}{{ property.area }} sqft |{% endif %}
+                        {% if property.car_parking %}Car Parking |{% endif %}
+                        {% if property.water %}Water |{% endif %}
+                        {% if property.gas %}Gas |{% endif %}
+                    </p>
+                    <details>
+                        <summary>View Details</summary>
+                        <p><strong>Location:</strong> {{ property.location }}</p>
+                        <p><strong>Owner:</strong> {{ property.owner }}</p>
+                        <p><strong>Contact (Email):</strong> {{ property.email }}</p>
+                        <p><strong>Phone:</strong> {{ property.phone }}</p>
+                        <p><strong>Price:</strong> {{ property.price }}</p>
+                        <p><strong>Property Details:</strong> {{ property.description }}</p>
+                        <p><strong>Status:</strong> {{ property.status|capfirst }}</p>
+                        {% if request.user.is_authenticated and property.user == request.user %}
+        <a href="{% url 'update_property_status' property.pk %}" style="background: #003366; color: #fff; border: none; border-radius: 5px; padding: 0.6rem 1.2rem; font-size: 1rem; font-weight: 600; margin: 0.3rem 0.3rem 0 0; display: inline-block; text-decoration: none; transition: background 0.2s;">Update Status</a>
+        <a href="{% url 'delete_property' property.pk %}" style="background: #003366; color: #fff; border: none; border-radius: 5px; padding: 0.6rem 1.2rem; font-size: 1rem; font-weight: 600; margin: 0.3rem 0; display: inline-block; text-decoration: none; transition: background 0.2s;" onclick="return confirm('Are you sure you want to delete this property?');">Delete</a>
+    {% endif %}
+                    </details>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <footer>
+        <button><a href="{% url 'properties' %}">Back</a></button>
+    </footer>
+</body>
+</html>

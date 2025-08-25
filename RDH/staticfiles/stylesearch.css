@@ -1,0 +1,19 @@
+.search-container {
+    margin: 20px;
+    position: relative;
+}
+.search-icon {
+    width: 30px;
+    cursor: pointer;
+}
+#filter-form.hidden {
+    display: none;
+}
+.property-list {
+    margin: 20px;
+}
+.property {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}

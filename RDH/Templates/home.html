@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Home page (RDH ACCOMMODATIONS SERVICES)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    {% load static %}       <!-- Load static files -->
+    
+    <link rel="stylesheet" href="{% static 'sty4.css' %}">
+    
+</head>
+<body>
+    <header>
+        <h1>RDH ACCOMMODATIONS SERVICES</h1>
+        <nav class="nav">
+            <ul>
+                <li id="nav-item" class="border"><a href="{% url 'home' %}">Home</a></li>
+                <li id="nav-item" class="border"><a href="{% url 'properties' %}">Properties</a></li>
+                <li id="nav-item" class="border"><a href="{% url 'login' %}">Login</a></li>
+                    <li id="nav-item" class="border"><a href="{% url 'C.A' %}">Contact</a></li>
+                <li id="nav-item" class="border"><a href="{% url 'terms' %}">T & Cs</a></li>
+            </ul>
+        </nav>
+        
+        <section class="hero" style="background-image: url('{% static '.jpg' %}')">
+            <h2> <i class="fa-solid fa-house"></i> Home Sweet Home <i class="fa-solid fa-house"></i></h2>
+            <p>Discover your dream home with unparalleled views and luxurious living spaces</p>
+            <a href="{% url 'properties' %}" class="btn">Explore Listings</a>
+        </section>
+    </header>
+    
+    <div id="welcomeModal">
+        <div class="modal-content">
+            <p>Welcome to my website! Discover your dream home.</p>
+        </div>
+        <div class="login-btn">     
+            <footer>
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+                {% endif %}
+        </div>
+    </div>
+           
+    </footer>
+</body>
+</html>

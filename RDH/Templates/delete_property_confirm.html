@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Property</title>
+    <link rel="stylesheet" href="/static/button-global.css">
+</head>
+<body>
+    <h2>Are you sure you want to delete this property?</h2>
+    <p><strong>{{ property.title }}</strong> ({{ property.location }})</p>
+    {% if request.user.is_authenticated and property.user == request.user %}
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn-primary">Yes, Delete</button>
+            <a href="{% url 'properties' %}">Cancel</a>
+        </form>
+    {% else %}
+        <p style="color:red; font-weight:bold;">You do not have permission to delete this property.</p>
+        <a href="{% url 'properties' %}">Back</a>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Property Status</title>
+    <link rel="stylesheet" href="/static/button-global.css">
+</head>
+<body>
+    <h2>Update Status for: {{ property.title }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="status">Status:</label>
+        <select name="status" id="status">
+            {% for value, label in property.STATUS_CHOICES %}
+                <option value="{{ value }}" {% if property.status == value %}selected{% endif %}>{{ label }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit" class="global-button">Update Status</button>
+    </form>
+    <a href="{% url 'properties' %}">Back to Properties</a>
+</body>
+</html>

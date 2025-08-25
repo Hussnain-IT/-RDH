@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add property</title>
+    <link rel="stylesheet" href="/static/addproperty.css">
+    
+</head>
+<body>
+    <div class="form">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2 class="heading">Add Property Form</h2>
+            <label for="title">Property Title:</label>
+            <input type="text" id="title" name="title" required placeholder="Property Title">
+
+            <label for="property_type">Property Type:</label>
+            <select id="property_type" name="property_type">
+                <option value="">Select Type</option>
+                <option value="5_MARLA">5 Marla</option>
+                <option value="7_MARLA">7 Marla</option>
+                <option value="10_MARLA">10 Marla</option>
+                <option value="1_KANAL">1 Kanal</option>
+            </select>
+
+            <label for="image">Image:</label>
+            <input type="file" id="image" name="image">
+
+            <label for="beds">Beds:</label>
+            <input type="number" id="beds" name="beds" min="0" required>
+
+            <label for="baths">Baths:</label>
+            <input type="number" id="baths" name="baths" min="0" required>
+
+            <label for="area">Area (sqft):</label>
+            <input type="text" id="area" name="area">
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="owner">Owner:</label>
+            <input type="text" id="owner" name="owner" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" required>
+
+            <label for="description">Property Details:</label>
+            <textarea id="description" name="description"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

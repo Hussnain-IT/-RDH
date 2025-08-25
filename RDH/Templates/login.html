@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RDH-Login</title>
+
+    {% load static %}  <!-- Load static files -->
+
+     <link rel="stylesheet" href="{% static 'login.css' %}">
+     
+</head>
+<body>
+    <div class="login_Page">
+        {% if messages %}
+  {% for message in messages %}
+    <div class="alert">{{ message }}</div>
+  {% endfor %}
+  {% endif %}
+    <form method="post" action="{% url 'login' %}">
+    <h2>Login To Your Account</h2>
+        <!-- CSRF token for security -->
+              {% csrf_token %}
+            <label for="username">username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" class="btn">Login</button>
+        <p>New user? <a href="{% url 'signup' %}">Sign up here</a>.</p>
+    </form>
+    </div>
+    <footer>
+    <a href="{% url 'home' %}" class="btn btn-success align-center" id="back-btn"><i class="fa-solid fa-left-long"></i> Back </a>
+</footer>
+</body>
+</html>

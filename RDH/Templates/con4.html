@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDH ACCOMODATIONS SERVICES - Contact Us</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'con4.css' %}">
+    <link rel="stylesheet" href="/static/button-global.css">
+</head>
+<body>
+         <div class="main-container-contact">
+        <h2 class="main-heading-contact">Contact Us</h2>
+            <form action="" method="post" class="contact-form">
+                {% csrf_token %}
+                {% if success %}
+                <div class="success-message">
+                    Thank you for your message! We'll get back to you soon.
+                </div>
+                {% endif %}
+
+                {% if agent %}
+                <div class="info-message">
+                    You are contacting <strong>{{ agent.name }}</strong> ({{ agent.email }})
+                </div>
+                <input type="hidden" name="agent_email" value="{{ agent.email }}">
+                {% endif %}
+
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Your Email:</label>
+                <input type="email" id="email-contact" name="email-contact" required>
+                <label for="contact number">Your contact number:</label>
+                <input type="tel" id="contact number" name="contact number" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+
+                
+                {% if agent %}
+                <label for="agent_email">Agent Email:</label>
+                <input type="email" id="agent_email" name="agent_email" value="{{ agent.email }}" readonly>
+                {% endif %}
+                <button type="submit" class="btn" style="border-radius: 0;">Send Message</button>
+
+            </form>
+            <footer>    
+        <a href="{% url 'home' %}" class="btn btn-success align-center" id= "back-btn" style="border-radius: 0;"><i class="fa-solid fa-left-long"></i> Back </a>
+    </footer>
+        </div>
+</html>
