@@ -16,18 +16,18 @@ class Property(models.Model):
         ('sold', 'Sold'),
     ]
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='properties')
-    title = models.CharField(max_length=200)  # Property Title
-    property_type = models.CharField(max_length=20, choices=PROPERTY_TYPES, blank=True, null=True)  # Marla(5,7,10,1 kanal)
+    title = models.CharField(max_length=200)  
+    property_type = models.CharField(max_length=20, choices=PROPERTY_TYPES, blank=True, null=True)  
     image = models.ImageField(upload_to='property_images/', blank=True, null=True)
     beds = models.IntegerField(blank=True, null=True)
-    baths = models.IntegerField(blank=True, null=True)  # New field for baths
+    baths = models.IntegerField(blank=True, null=True) 
     area = models.CharField(max_length=50, blank=True, null=True)
     location = models.CharField(max_length=200)
-    owner = models.CharField(max_length=100)  # Owner name
-    email = models.EmailField()  # Contact (Email)
-    phone = models.CharField(max_length=20)  # Phone
+    owner = models.CharField(max_length=100)  
+    email = models.EmailField()  
+    phone = models.CharField(max_length=20) 
     price = models.DecimalField(max_digits=12, decimal_places=2)
-    description = models.TextField(blank=True, null=True)  # Property Details
+    description = models.TextField(blank=True, null=True)  
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='available')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

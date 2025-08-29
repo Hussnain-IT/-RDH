@@ -14,7 +14,6 @@ urlpatterns = [
     path('contact/', views.contact_view, name='contact'),
     path('C.A/', views.CA_view, name='C.A'),
     path('C.A/proUI.html', views.CA_proUI_view, name='CA_proUI'),
-   # path('property_list/', views.property_list, name='property_list'),
     path('property/<int:pk>/update-status/', views.update_property_status, name='update_property_status'),
     path('property/<int:pk>/delete/', views.delete_property, name='delete_property'),
     path('property-search/', views.property_search_view, name='property_search'),
