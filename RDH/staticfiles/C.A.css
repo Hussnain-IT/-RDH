@@ -57,11 +57,7 @@
     border-radius: 4px;
     padding: 10px 20px;
     font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s, box-shadow 0.2s;
-    box-shadow: 2px 6px rgba(0, 0, 0, 0.08);
-    margin-top: 30px;
-}
+   }
 
 footer{
     width: 100%;
@@ -80,12 +76,6 @@ footer a{
     text-decoration: none;
 
 }
-/* .btn-footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-} */
 
 @media (max-width: 660px) {
     .property-Section {
@@ -102,18 +92,3 @@ footer a{
 h2{
     text-align: center;
 }
-
-  /*footer{
-    height: auto;
-    width: 100%;
-    border: 2px solid black;
-    border-radius: 10px;
-    background-color: #003366;
-    color: #fff;
-    text-align: center;
-    /*padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}*/

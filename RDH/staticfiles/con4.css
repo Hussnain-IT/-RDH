@@ -23,15 +23,6 @@ a{
     border:2px solid  #D3D3D3;
     border-radius: 30%;
 }
-.btn {
-    display: inline-block;
-    background-color: #ff9900;
-    color: #fff;
-    padding: 10px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-}
 
 .contact-form {
     max-width: 400px;
@@ -66,3 +57,25 @@ footer{
     /* font-weight: bold;
     margin-left: 14px; */
 }
+.btn {
+    display: inline-block;
+    background-color: #ff9900;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+   /* margin-top: 20px;*/
+    font-weight: 600;
+}
+
+#back-btn {
+    
+    text-align: center;
+    background-color: #ff9900;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-weight: 600;
+   }
