@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Update Property Status</title>
     <link rel="stylesheet" href="/static/button-global.css">
+    <link rel="stylesheet" href="/static/updatepro.css">
+    {% load static %}
 </head>
 <body>
     <h2>Update Status for: {{ property.title }}</h2>
@@ -17,6 +19,8 @@
         </select>
         <button type="submit" class="global-button">Update Status</button>
     </form>
+    <footer>
     <a href="{% url 'properties' %}">Back to Properties</a>
+    </footer>
 </body>
 </html>

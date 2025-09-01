@@ -5,5 +5,3 @@ daphne
 
 
 daphne RDH1.asgi:application
-
-

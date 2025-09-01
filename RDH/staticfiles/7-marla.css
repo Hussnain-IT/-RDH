@@ -11,6 +11,7 @@
     text-align: center;
     font-weight: bold;
 }
+
 .main-cantainer-7-Marla{
     background-color: #f4f4f4;
     font-family: Arial, Helvetica, sans-serif;
@@ -19,20 +20,20 @@
     padding: 20px;
     justify-content: space-between;
 }
+
 .property-Section{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    /* background-color: lightskyblue; */
 }
 
 .box{
-    /* border: 2px solid black; */
     height: 630px;
     width: 30%;
     background-color: rgb(248, 248, 248);
     margin-top: 20px;
 }
+
 .box-cont{
     margin-left: 1rem;
     margin-right: 1rem;
@@ -44,9 +45,11 @@
     padding: 20px 0px 15px;
     border-radius:10px ;
 }
+
 .box-cont p{
     color:#007185;
 }
+
 p{
     margin: 1%;
     text-decoration: none;
@@ -67,26 +70,15 @@ button a{
 }
 
 footer{
-    /* height:20px; *
-    width: 98%;
+    width: 100%;
+    height: 90px;
     border: 2px solid black;
     border-radius: 10px;
     background-color: #003366;
     color: #fff;
     text-align: center;
-    /* font-weight: bold;
-    margin-left: 14px; */
+    font-weight: bold;
+    margin:0 0 8px;
+    margin-top: 10px;
 
-
-            width: 100%;
-            height: 90px;
-            border: 2px solid black;
-            border-radius: 10px;
-            background-color: #003366;
-            color: #fff;
-            text-align: center;
-            font-weight: bold;
-            margin:0 0 8px;
-            margin-top: 10px;
-        
 }

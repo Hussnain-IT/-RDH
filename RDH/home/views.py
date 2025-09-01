@@ -88,12 +88,11 @@ def contact_view(request):
             phone=phone,
             message=message
         )
-        # Send email notification
         send_mail(
             subject=f'New Contact from {name}',
             message=f'Name: {name}\nEmail: {email}\nPhone: {phone}\nMessage: {message}',
             from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=[settings.EMAIL_HOST_USER],  # Send to the site admin email
+            recipient_list=[settings.EMAIL_HOST_USER],  
             fail_silently=False,
         )
         return render(request, 'con4.html', {'success': True})
