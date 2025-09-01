@@ -88,7 +88,6 @@ def contact_view(request):
             phone=phone,
             message=message
         )
-        # Send email notification to site admin
         send_mail(
             subject=f'New Contact from {name}',
             message=f'Name: {name}\nEmail: {email}\nPhone: {phone}\nMessage: {message}',

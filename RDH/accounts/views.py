@@ -64,13 +64,6 @@ def signup(request):
         return redirect('login')
     return render(request, 'signup.html')
 
-
-def dashboard(request):
-    if request.user.is_authenticated:
-        return render(request, 'dashboard.html')
-    else:
-        return redirect('/login')
-
 def proUI_view(request):
     return render(request, 'proUI.html')
 

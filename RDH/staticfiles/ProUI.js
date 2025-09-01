@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
   
   if (searchForm) {
     searchForm.addEventListener("submit", function(event) {
-      // Get form fields
       const minPrice = document.querySelector("[name='min_price']").value.trim();
       const maxPrice = document.querySelector("[name='max_price']").value.trim();
       const propertyType = document.querySelector("[name='property_type']").value;

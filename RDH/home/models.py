@@ -15,10 +15,11 @@ class Property(models.Model):
         ('available', 'Available'),
         ('sold', 'Sold'),
     ]
+    
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='properties')
     title = models.CharField(max_length=200)  
     property_type = models.CharField(max_length=20, choices=PROPERTY_TYPES, blank=True, null=True)  
-    image = models.ImageField(upload_to='property_images/', blank=True, null=True)
+    image = models.ImageField(upload_to='property_images/')
     beds = models.IntegerField(blank=True, null=True)
     baths = models.IntegerField(blank=True, null=True) 
     area = models.CharField(max_length=50, blank=True, null=True)
